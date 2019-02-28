@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/service/demo.iml" filepath="$PROJECT_DIR$/service/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/demo (1).iml" filepath="$PROJECT_DIR$/client/demo (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbonClient/demo (1) (com.ribbon).iml" filepath="$PROJECT_DIR$/ribbonClient/demo (1) (com.ribbon).iml" />
+      <module fileurl="file://$PROJECT_DIR$/feignClient/demo (2) (com.feign).iml" filepath="$PROJECT_DIR$/feignClient/demo (2) (com.feign).iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbonClient1/demo (3).iml" filepath="$PROJECT_DIR$/ribbonClient1/demo (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbonClient2/demo (4).iml" filepath="$PROJECT_DIR$/ribbonClient2/demo (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springClould.iml" filepath="$PROJECT_DIR$/.idea/springClould.iml" />
+    </modules>
+  </component>
+</project>
