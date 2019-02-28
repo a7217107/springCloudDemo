@@ -32,6 +32,7 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
+
     @RequestMapping("/test")
     public List<User> testClient(){
         List<User> list = new ArrayList<>();
