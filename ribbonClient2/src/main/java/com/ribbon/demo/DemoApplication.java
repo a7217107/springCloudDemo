@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 
 /**
- * @Description: 负载均衡服务器 2
+ * @Description: 负载均衡服务器 2 端口8092
  * @Author: zi_you
  * @Date: 2019/2/25 15:06
  */
