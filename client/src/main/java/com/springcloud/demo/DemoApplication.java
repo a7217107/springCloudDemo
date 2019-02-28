@@ -16,6 +16,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Description:  客户端  client1 端口号8762
+ * @Author: zi_you
+ * @Date: 2019/2/28 17:52
+ */
 @SpringBootApplication
 @RestController
 @EnableEurekaClient
@@ -30,25 +35,9 @@ public class DemoApplication {
     @RequestMapping("/test")
     public List<User> testClient(){
         List<User> list = new ArrayList<>();
-        try {
-            String url = "jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8";
-            //数据库账号
-            String user = "root";
-            //数据库密码
-            String pwd = "a7323321";
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, user, pwd);
-            PreparedStatement statement = conn.prepareStatement("select * from user");
-            ResultSet set = statement.executeQuery();
-            while (set.next()){
-                User item = new User();
-                item.setId(set.getInt("id"));
-                item.setName(set.getString("name"));
-                list.add(item);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        //模拟sql 查询结果
+        list.add(new User(1,"ziyou1"));
+        list.add(new User(2,"ziyou2"));
         return list;
     }
     @RequestMapping("/test2")

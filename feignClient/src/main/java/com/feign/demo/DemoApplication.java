@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * @Description: feign 调用
+ * @Description: feign 调用 端口8093
  * @Author: zi_you
  * @Date: 2019/2/27 18:59
  */

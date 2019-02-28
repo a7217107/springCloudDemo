@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 
 /**
- * @Description: sss
+ * @Description: 负载均衡服务器 2
  * @Author: zi_you
  * @Date: 2019/2/25 15:06
  */
@@ -30,14 +30,15 @@ public class DemoApplication {
     }
 
     @Bean
-    @LoadBalanced
+    @LoadBalanced // 负载均衡注释
     RestTemplate restTemplate(){
         return new RestTemplate();
     }
 
     @RequestMapping("/test")
     public String test(){
-        System.out.println(1);
+        System.out.println(2);
+        //请求client1服务
         return restTemplate.getForEntity("http://CLIENT1/test", String.class).getBody()+"ribbon2";
     }
 
