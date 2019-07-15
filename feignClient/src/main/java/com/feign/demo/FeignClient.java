@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextListener;
 
 import javax.annotation.Resource;
 
@@ -19,18 +20,33 @@ import javax.annotation.Resource;
 @EnableFeignClients
 @EnableDiscoveryClient
 @RestController
-public class DemoApplication {
+public class FeignClient {
 
     @Resource
     private TestService testService;
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(FeignClient.class, args);
+    }
+    @Bean
+    public RequestContextListener requestContextListener(){
+        return new RequestContextListener();
     }
 
     @RequestMapping("/test")
     public String test(){
-        return testService.test();
+        TaskQO test =new TaskQO();
+        test.setBrandId(123);
+        test.setPartnerId(-1);
+        test.setTaskTitle("测试");
+        test.setCategoryId(1);
+        test.setTaskType(1);
+        test.setTaskPriority(0);
+        test.setPlatformId(1);
+        test.setKeyword("五角星");
+        test.setSortType("DEFAULT");
+        test.setTaskStatus(0);
+        return testService.test(test);
     }
 
 }

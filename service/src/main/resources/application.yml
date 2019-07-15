@@ -1,14 +1,30 @@
 server:
   port: 8761
 
-  eureka:
-    instance:
-      hostname: localhost
-    client:
-      register-with-eureka: false
-      fetch-registry: false
-      service-url:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+  client:
+    #是否将自己注册到注册中心
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 spring:
   application:
+    # 服务名
     name: service
+
+#spring security 配置的 eureka 登陆账号密码
+  security:
+    user:
+      name: admin
+      password: 123456
+
+# logback 配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INFO
